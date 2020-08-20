@@ -25,10 +25,25 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
+   // Para o efeito de Drag and Drop dos itens listados
   $( function() {
     $( "#sortableList" ).sortable();
     $( "#sortableList" ).disableSelection();
-  } );
+  });
+
+    // Ao clicar no item para arrastar, este fica destacado como activo - Funcionando com o click apenas!!!
+    $(function(){
+    // console.log('ready');
+
+    $('.list-group li').click(function(e) {
+        e.preventDefault()
+
+        $that = $(this);
+
+        $that.parent().find('li').removeClass('active');
+        $that.addClass('active');
+    });
+})
 </script>
 
 </head>
