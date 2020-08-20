@@ -15,44 +15,72 @@
 
     <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
+            <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+   // Para o efeito de Drag and Drop dos itens listados
+  $( function() {
+    $( "#sortableList" ).sortable();
+    $( "#sortableList" ).disableSelection();
+  });
+
+    // Ao clicar no item para arrastar, este fica destacado como activo - Funcionando com o click apenas!!!
+    $(function(){
+    // console.log('ready');
+
+    $('.list-group li').click(function(e) {
+        e.preventDefault()
+
+        $that = $(this);
+
+        $that.parent().find('li').removeClass('active');
+        $that.addClass('active');
+    });
+})
+</script>
+
 </head>
 
 <body class="text-center">
     <div class="lista">
         <h1 class="h3 mb-3 font-weight-normal">Clique e Arraste para reordenar</h1>
 
-        <ul class="list-group">
+        <ul class="list-group" id="sortableList">
             <li class="list-group-item active" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 1.</a>
             </li>
             <li class="list-group-item" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 2.</a>
             </li>
             <li class="list-group-item" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 3.</a>
             </li>
             <li class="list-group-item" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 4.</a>
             </li>
             <li class="list-group-item" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 5.</a>
             </li>
             <li class="list-group-item" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 6.</a>
             </li>
             <li class="list-group-item" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 7.</a>
             </li>
             <li class="list-group-item" draggable="true">
-                <a href="" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <a href="" title="">Item a mover 8.</a>
             </li>
         </ul>
         <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </div>
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
